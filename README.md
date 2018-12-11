@@ -39,4 +39,7 @@ Running Server - ./src/dynamicd --daemon
 Stopping Server - ./src/dynamic-cli stop
 Help - ./src/dynamic-cli help
 
+## RPC Calls
+
+See - https://en.bitcoin.it/wiki/API_reference_(JSON-RPC)
 
