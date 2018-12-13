@@ -21,7 +21,9 @@ run:
     ./autogen.sh && ./configure --without-gui --disable-tests --disable-bench && make
 
 ## Configuration
-Dynamic configuration should be created at: `~/.dynamic/dynamic.conf`. Copy the config from `./docker/dynamic.default.conf` into this file.
+You will need to create a dynamic configuration file at: `~/.dynamic/dynamic.conf` on the vagrant VM
+
+Copy the config from `./docker/dynamic.default.conf` into this file.
 
 ## Running commands
 
