@@ -7,3 +7,6 @@ dockerfile
 .vagrant/
 docker.md
 docker-images/
+README.md
+Vagrantfile
+provision/
