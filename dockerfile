@@ -12,7 +12,9 @@ RUN ./configure --without-gui --disable-tests --disable-bench
 RUN make
 FROM ubuntu:bionic
 WORKDIR /dynamic
-COPY --from=build-env /dynamic/build/apps/dynamic-private/src ./dist
+COPY --from=build-env /dynamic/build/apps/dynamic-private/src/dynamicd ./dist/
+COPY --from=build-env /dynamic/build/apps/dynamic-private/src/dynamic-cli ./dist/
+COPY --from=build-env /dynamic/build/apps/dynamic-private/src/dynamic-tx ./dist/
 RUN apt-get update  \
     && apt-get install -y  \
         libzmq5 \
