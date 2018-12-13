@@ -21,41 +21,7 @@ run:
     ./autogen.sh && ./configure --without-gui --disable-tests --disable-bench && make
 
 ## Configuration
-Dynamic configuration can be found in vagrant: `~/.dynamic/dynamic.conf`, if this has not been created, then
-
-    ./src/dynamicd --daemon
-
-wait for a few seconds
-
-    ./src/dynamic-cli stop
-
-and a configuration file should now be created at `~/.dynamic/dynamic.conf`
-
-Comment out the following lines:
-
-    rpcport=33350
-    port=33300
-
-so they look like this:
-
-    #rpcport=33350
-    #port=33300
-
-
-then add the following to the end of the file:
-
-    testnet=1
-    daemon=1
-    server=1
-    rpcbind=0.0.0.0
-    rpcallowip=0.0.0.0/0
-    addnode=159.203.17.98
-    addnode=18.214.64.9
-    addnode=178.128.144.29
-    addnode=206.189.30.176
-    addnode=178.128.180.138
-    addnode=178.128.63.114
-    addnode=138.197.167.18
+Dynamic configuration should be created at: `~/.dynamic/dynamic.conf`. Copy the config from `./docker/dynamic.default.conf` into this file.
 
 ## Running commands
 
