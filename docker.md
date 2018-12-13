@@ -45,25 +45,7 @@ Now:
 
     ./docker-run.sh
 
-wait for about ten seconds and ensure that directory `./.dynamic` is created (this directory is mounted into to the docker image) and that `./.dynamic/dynamic.conf` looks like this (except for `rpcuser` and `rpcpassword`, which will be different for each user):
-
-    #Do not use special characters with username/password
-    rpcuser=someusername
-    rpcpassword=somepassword
-    #rpcport=33350
-    #port=33300
-    testnet=1
-    daemon=1
-    server=1
-    rpcbind=0.0.0.0
-    rpcallowip=0.0.0.0/0
-    addnode=159.203.17.98
-    addnode=18.214.64.9
-    addnode=178.128.144.29
-    addnode=206.189.30.176
-    addnode=178.128.180.138
-    addnode=178.128.63.114
-    addnode=138.197.167.18
+...wait for about ten seconds and ensure that `./.dynamic/dynamic.conf` exists and that directory `./.dynamic/testnet3` directory has been created. If yes, this is a strong indication that everything is working correctly.
 
 If everything is working correctly, the RPC endpoint will be exposed on `localhost` port `33450` and can be connected to from node using the [`bitcoin-core`](https://www.npmjs.com/package/bitcoin-core) NPM package:
 
@@ -75,6 +57,28 @@ If everything is working correctly, the RPC endpoint will be exposed on `localho
         password: "somepassword"   #use rpcpassword value from ./.dynamic/dynamic.conf
     })
     bc.command("getinfo").then(r => console.log(r))
+
+You can check "sync" status by issuing command
+
+    docker exec dynamicd dynamic-cli dnsync status
+
+When all synced, you can expect a response that looks like this:
+
+    {
+        "AssetID": 999,
+        "AssetName": "DYNODE_SYNC_FINISHED",
+        "AssetStartTime": 1544715953,
+        "Attempt": 0,
+        "IsBlockchainSynced": true,
+        "IsDynodeListSynced": true,
+        "IsWinnersListSynced": true,
+        "IsSynced": true,
+        "IsFailed": false
+    }
+
+You can view the dynamicd debug log with
+
+    docker exec dynamicd tail -f /root/.dynamic/testnet3/debug.log
 
 ## stopping the docker instance
 
