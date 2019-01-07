@@ -16,11 +16,15 @@ You may be able to skip this step and download a pre-built docker image. See bel
 
 In a bash shell, change to this directory.
 
+Now, if you haven't done so already, initialize and update the submodules of this repo with
+
+    git submodule update --init --recursive
+
 The docker image can be built by running the bash script:
 
     ./docker-build.sh
 
-This will first checkout the `dynamic-private` submodule into `./apps/dynamic-private/`, then build a new docker image tagged as `dynamicd-testing:latest`. The build process can take a significant amount of time.
+This will first update the `dynamic-private` submodule in `./apps/dynamic-private/` to the latest version, then build a new docker image tagged as `dynamicd-testing:latest`. The build process can take a significant amount of time.
 
 ### Saving a built image to file
 
