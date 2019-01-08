@@ -1,3 +1,4 @@
 .dynamic/
 .vagrant/
 docker-images/
+docker-build-artefacts/
