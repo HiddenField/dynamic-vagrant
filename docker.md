@@ -49,14 +49,14 @@ Now:
 
     ./docker-run.sh
 
-...wait for about ten seconds and ensure that `./.dynamic/dynamic.conf` exists and that directory `./.dynamic/testnet3` directory has been created. If yes, this is a strong indication that everything is working correctly.
+...wait for about ten seconds and ensure that `./.dynamic/dynamic.conf` exists and that directory `./.dynamic/privatenet` directory has been created. If yes, this is a strong indication that everything is working correctly.
 
-If everything is working correctly, the RPC endpoint will be exposed on `localhost` port `33450` and can be connected to from node using the [`bitcoin-core`](https://www.npmjs.com/package/bitcoin-core) NPM package:
+If everything is working correctly, the RPC endpoint will be exposed on `localhost` port `33650` and can be connected to from node using the [`bitcoin-core`](https://www.npmjs.com/package/bitcoin-core) NPM package:
 
     const bitcoin = require("bitcoin-core");
     const bc = new bitcoin({
         host: "localhost", 
-        port: "33450", 
+        port: "33650", 
         username: "someusername",  #use rpcuser value from ./.dynamic/dynamic.conf
         password: "somepassword"   #use rpcpassword value from ./.dynamic/dynamic.conf
     })
@@ -82,7 +82,7 @@ When all synced, you can expect a response that looks like this:
 
 You can view the dynamicd debug log with
 
-    docker exec dynamicd tail -f /root/.dynamic/testnet3/debug.log
+    docker exec dynamicd tail -f /root/.dynamic/privatenet/debug.log
 
 ## extracting the binary build artefacts from the docker image
 
