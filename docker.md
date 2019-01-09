@@ -84,6 +84,19 @@ You can view the dynamicd debug log with
 
     docker exec dynamicd tail -f /root/.dynamic/testnet3/debug.log
 
+## extracting the binary build artefacts from the docker image
+
+While the docker image is running:
+
+    mkdir -p ./docker-build-artefacts
+    docker exec dynamicd cat dist/dynamicd > ./docker-build-artefacts/dynamicd
+    docker exec dynamicd cat dist/dynamic-cli > ./docker-build-artefacts/dynamic-cli
+    chmod +x ./docker-build-artefacts/dynamicd
+    chmod +x ./docker-build-artefacts/dynamic-cli
+
+see [docker-get-build-artefacts.sh](docker-get-build-artefacts.sh)
+
+
 ## stopping the docker instance
 
     ./docker-stop.sh
