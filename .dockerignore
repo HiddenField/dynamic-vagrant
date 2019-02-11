@@ -2,6 +2,7 @@ docker-build.sh
 docker-run.sh
 docker-stop.sh
 docker-save-image.sh
+update-submodules.sh
 docker-get-build-artefacts.sh
 dockerfile
 .dynamic/
