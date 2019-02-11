@@ -16,17 +16,20 @@ You may be able to skip this step and download a pre-built docker image. See bel
 
 In a bash shell, change to this directory.
 
-Now, if you haven't done so already, initialize and update the submodules of this repo with
-
-    ./update-submodules.sh
-
-(or `./update-submodules.sh --remote` to pull latest version of [`dynamic-private`](https://github.com/duality-solutions/dynamic-private) repository)
-
 The docker image can be built by running the bash script:
 
     ./docker-build.sh
 
-This will first update the `dynamic-private` submodule in `./apps/dynamic-private/` to the current version (remember, you can `./update-submodules.sh --remote` to update submodules to latest remote version), then build a new docker image tagged as `dynamicd-testing:latest`. The build process can take a significant amount of time.
+This will first update the `dynamic-private` submodule in `./apps/dynamic-private/` to the current version.
+
+> If you want to update submodules to latest remote version, you can issue 
+> 
+>     ./docker-build.sh -r
+> 
+
+This will build a new docker image tagged as `dynamicd-testing:latest`. 
+
+The build process can take a significant amount of time.
 
 ### Saving a built image to file
 
