@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-./update-submodules.sh --remote
+./update-submodules.sh
 docker build --rm -f "dockerfile" -t dynamicd-testing:latest .

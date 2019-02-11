@@ -26,7 +26,7 @@ The docker image can be built by running the bash script:
 
     ./docker-build.sh
 
-At the moment, this will first update the `dynamic-private` submodule in `./apps/dynamic-private/` to the latest remote version, then build a new docker image tagged as `dynamicd-testing:latest`. The build process can take a significant amount of time.
+This will first update the `dynamic-private` submodule in `./apps/dynamic-private/` to the current version (remember, you can `./update-submodules.sh --remote` to update submodules to latest remote version), then build a new docker image tagged as `dynamicd-testing:latest`. The build process can take a significant amount of time.
 
 ### Saving a built image to file
 
