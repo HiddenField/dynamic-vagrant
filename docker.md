@@ -31,6 +31,12 @@ This will build a new docker image tagged as `dynamicd-testing:latest`.
 
 The build process can take a significant amount of time.
 
+>  If flag `-r` is used, this will pull latest version of https://github.com/duality-solutions/dynamic-private into `./apps/dynamic-private/` before building. 
+> 
+> If it isn't supplied, the current commit described by the current version of the submodule ( https://github.com/duality-solutions/dynamic-private ) at `./apps/dynamic-private/` will be pulled before building. 
+> 
+> Usually, you'll want the `-r` option for "latest version", so to build (both from scratch, and/or rebuild), the command will usually be `./docker-build.sh -r` .
+
 ### Saving a built image to file
 
 This step is only necessary for sharing the built image
