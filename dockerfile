@@ -8,7 +8,7 @@ RUN apt-get install -y libdb4.8-dev libdb4.8++-dev
 COPY ./apps/dynamic-private/depends /dynamic/build/apps/dynamic-private/depends
 WORKDIR /dynamic/build/apps/dynamic-private/depends
 RUN make NO_QT=1 HOST=x86_64-unknown-linux-gnu
-COPY . /dynamic/build/
+COPY ./apps/dynamic-private /dynamic/build/apps/dynamic-private
 WORKDIR /dynamic/build/apps/dynamic-private
 ENV PATH=/dynamic/build/apps/dynamic-private/depends/x86_64-unknown-linux-gnu/native/bin:${PATH}
 ENV INSTALLPATH=/dynamic/build/apps/dynamic-private/installed/x86_64-unknown-linux-gnu
@@ -26,4 +26,4 @@ WORKDIR /dynamic
 COPY --from=build-env /dynamic/build/apps/dynamic-private/installed/x86_64-unknown-linux-gnu/bin/dynamicd /dynamic/build/apps/dynamic-private/installed/x86_64-unknown-linux-gnu/bin/dynamic-cli ./dist/
 ENV PATH="/dynamic/dist:${PATH}"
 COPY ./docker/* ./
-CMD ["/bin/bash","-c","./configure.sh && dynamicd --daemon && tail -f /dev/null"]
+CMD ["/bin/bash","-c","./entry.sh"]
