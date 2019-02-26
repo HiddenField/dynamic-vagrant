@@ -4,6 +4,7 @@ docker-stop.sh
 docker-save-image.sh
 update-submodules.sh
 docker-get-build-artefacts.sh
+clean-dynamicd.sh
 dockerfile
 .dynamic/
 ._dynamic/
