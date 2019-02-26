@@ -6,6 +6,7 @@ update-submodules.sh
 docker-get-build-artefacts.sh
 dockerfile
 .dynamic/
+._dynamic/
 .vagrant/
 docker-build-artefacts/
 docker.md
