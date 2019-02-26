@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 set -e
 pushd .dynamic/privatenet
 sudo find . -maxdepth 1 ! -name 'wallet.dat' -type f -exec rm -fv {} +
