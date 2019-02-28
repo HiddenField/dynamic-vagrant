@@ -3,7 +3,7 @@ Vagrant files to setup ubuntu VM for Dynamic node build
 
 ## Setup and Build notes
 
-Pull the `dynamic-private` submodule with
+Pull the `dynamic` submodule with
 
     git submodule update --recursive --remote
 
@@ -17,7 +17,7 @@ SSH into vagrant:
 
 run:
 
-    cd apps/dynamic-private
+    cd apps/dynamic
     ./autogen.sh && ./configure --without-gui --disable-tests --disable-bench && make
 
 ## Configuration

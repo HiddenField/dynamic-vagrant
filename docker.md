@@ -2,9 +2,9 @@
 
 ## Prerequisites
 
-To reduce the size of the docker context to an absolute minimum, please clone a fresh copy of this repository. Things work a little differently to the vagrant process, and build artefacts from the vagrant workflow in `./apps/dynamic-private` will significantly increase the space needed to perform a docker build.
+To reduce the size of the docker context to an absolute minimum, please clone a fresh copy of this repository. Things work a little differently to the vagrant process, and build artefacts from the vagrant workflow in `./apps/dynamic` will significantly increase the space needed to perform a docker build.
 
-You must have read access to the [`dynamic-private`](https://github.com/duality-solutions/dynamic-private) repository
+You must have read access to the [`dynamic`](https://github.com/duality-solutions/Dynamic) repository
 
 Docker / Docker for Mac / Docker for Windows must be installed
 
@@ -20,7 +20,7 @@ The docker image can be built by running the bash script:
 
     ./docker-build.sh
 
-This will first update the `dynamic-private` submodule in `./apps/dynamic-private/` to the current version.
+This will first update the `dynamic` submodule in `./apps/dynamic/` to the current version.
 
 > If you want to update submodules to latest remote version, you can issue 
 > 
@@ -31,9 +31,9 @@ This will build a new docker image tagged as `dynamicd-testing:latest`.
 
 The build process can take a significant amount of time.
 
->  If flag `-r` is used, this will pull latest version of https://github.com/duality-solutions/dynamic-private into `./apps/dynamic-private/` before building. 
+>  If flag `-r` is used, this will pull latest version of https://github.com/duality-solutions/Dynamic into `./apps/dynamic/` before building. 
 > 
-> If it isn't supplied, the current commit described by the current version of the submodule ( https://github.com/duality-solutions/dynamic-private ) at `./apps/dynamic-private/` will be pulled before building. 
+> If it isn't supplied, the current commit described by the current version of the submodule ( https://github.com/duality-solutions/Dynamic ) at `./apps/dynamic/` will be pulled before building. 
 > 
 > Usually, you'll want the `-r` option for "latest version", so to build (both from scratch, and/or rebuild), the command will usually be `./docker-build.sh -r` .
 
