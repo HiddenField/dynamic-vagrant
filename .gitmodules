@@ -1,3 +1,0 @@
-[submodule "apps/dynamic-private"]
-	path = apps/dynamic-private
-	url = git@github.com:duality-solutions/dynamic-private.git
