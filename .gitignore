@@ -1,5 +1,6 @@
 .dynamic/
 ._dynamic/
+.__dynamic/
 .vagrant/
 docker-images/
 docker-build-artefacts/

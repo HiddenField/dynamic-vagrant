@@ -8,6 +8,7 @@ clean-dynamicd.sh
 dockerfile
 .dynamic/
 ._dynamic/
+.__dynamic/
 .vagrant/
 docker-build-artefacts/
 docker.md
