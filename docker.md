@@ -22,20 +22,20 @@ The docker image can be built by running the bash script:
 
 This will first update the `dynamic` submodule in `./apps/dynamic/` to the current version.
 
-> If you want to update submodules to latest remote version, you can issue 
+> If you don't want to update submodules to latest remote version, you can issue 
 > 
->     ./docker-build.sh -r
+>     ./docker-build.sh -n
 > 
 
 This will build a new docker image tagged as `dynamicd-testing:latest`. 
 
 The build process can take a significant amount of time.
 
->  If flag `-r` is used, this will pull latest version of https://github.com/duality-solutions/Dynamic into `./apps/dynamic/` before building. 
+>  If flag `-n` is used, this will not pull the latest version of https://github.com/duality-solutions/Dynamic into `./apps/dynamic/` before building, and instead pull the currently committed version of the submodule at `./apps/dynamic/` will be pulled before builing
 > 
-> If it isn't supplied, the current commit described by the current version of the submodule ( https://github.com/duality-solutions/Dynamic ) at `./apps/dynamic/` will be pulled before building. 
+> If it isn't supplied, the HEAD commit of the branch described by the submodule ( https://github.com/duality-solutions/Dynamic ) at `./apps/dynamic/` will be pulled before building. I.e. This will build the *latest* version of https://github.com/duality-solutions/Dynamic
 > 
-> Usually, you'll want the `-r` option for "latest version", so to build (both from scratch, and/or rebuild), the command will usually be `./docker-build.sh -r` .
+> Usually, you'll want to omit the `-n` option for "latest version", so to build (both from scratch, and/or rebuild), the command will usually be `./docker-build.sh` .
 
 ### Saving a built image to file
 

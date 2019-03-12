@@ -1,15 +1,18 @@
 #!/usr/bin/env bash
-echo $1
 usage() { 
-    echo "docker-build.sh [-r]" 1>&2; 
-    echo " -r update submodule from remote" 1>&2
+    echo "docker-build.sh [-n]" 1>&2; 
+    echo " -n Do not update to latest submodule(s) from remote. Use committed submodule version and update to that version" 1>&2
     exit 1; 
 }
-while getopts "r" o; do
+UPDATE_REMOTE="--remote"
+while getopts "nh" o; do
     case "${o}" in
-        r)
-            echo "updating submodules from remote"
-            UPDATE_REMOTE="--remote";;
+        n)
+            echo "Not updating submodules from remote"
+            unset UPDATE_REMOTE;;
+        h)
+            usage
+            ;;
         *)
             usage
             ;;
