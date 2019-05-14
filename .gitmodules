@@ -1,4 +1,4 @@
 [submodule "apps/dynamic"]
 	path = apps/dynamic
-	url = git@github.com:duality-solutions/Dynamic.git
+	url = https://github.com/duality-solutions/dynamic
 	branch = v2.4-WIP-BDAP
