@@ -20,5 +20,4 @@ if [ -z ${COMMITID+x} ];
         git checkout ${COMMITID}
         git submodule update --init --recursive
         popd
-
 fi
