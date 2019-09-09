@@ -36,6 +36,12 @@ The build process can take a significant amount of time.
 > If it isn't supplied, the HEAD commit of the branch described by the submodule ( https://github.com/duality-solutions/Dynamic ) at `./apps/dynamic/` will be pulled before building. I.e. This will build the *latest* version of https://github.com/duality-solutions/Dynamic
 > 
 > Usually, you'll want to omit the `-n` option for "latest version", so to build (both from scratch, and/or rebuild), the command will usually be `./docker-build.sh` .
+>
+> Alternatively, if you want to use a specific commit/branch/tag of the dynamic repository, you can:
+>
+>     ./docker-build.sh -c v2.4.25
+>
+> This will check-out the v2.4.25 tag and refresh the submodules of dynamicd according to what's stored in that commit. This can be useful when matching the docker build to prebuilt binaries.
 
 ### Saving a built image to file
 
